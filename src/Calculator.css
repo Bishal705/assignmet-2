@@ -1,0 +1,169 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Calculator {
+  width: 95%;
+  max-width: 320px;
+  background-color: #1a1a2e;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.screen-row input {
+  width: 100%;
+  height: 50px;
+  background: #16213e;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 0 15px;
+  text-align: right;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.screen-row input::placeholder {
+  color: #8a8a8a;
+}
+
+.Keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.ButtonStyle {
+  background-color: #5294e6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  height: 55px;
+  flex: 1;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  margin: 3px;
+}
+
+.ButtonStyle:hover {
+  background-color: #1a508b;
+  transform: translateY(-2px);
+}
+
+.ButtonStyle:active {
+  transform: translateY(0);
+}
+
+.special-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.special-buttons button {
+  flex: 1;
+  height: 50px;
+  font-size: 16px;
+}
+
+/* Style for "show me" button */
+.special-buttons button[value="show me"] {
+  background-color: #e94560;
+}
+
+.special-buttons button[value="show me"]:hover {
+  background-color: #ff2e63;
+}
+
+/* Style for "square" button */
+.special-buttons button[value="square"] {
+  background-color: #00b894;
+}
+
+.special-buttons button[value="square"]:hover {
+  background-color: #00a085;
+}
+
+/* Clear buttons */
+.ButtonStyle[value="C"],
+.ButtonStyle[value="CE"] {
+  background-color: #f9ca24;
+  color: #333;
+}
+
+.image-container {
+  margin: 10px 0;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.image-container img {
+  width: 140px;
+  height: 110px;
+  border-radius: 8px;
+  border: 2px solid #e94560;
+  object-fit: cover;
+}
+
+/* Ensure it fits on mobile */
+@media (max-width: 380px) {
+  .Calculator {
+    padding: 12px;
+    max-width: 300px;
+  }
+  
+  .ButtonStyle {
+    height: 50px;
+    font-size: 16px;
+  }
+  
+  .screen-row input {
+    height: 55px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 320px) {
+  .Calculator {
+    max-width: 280px;
+  }
+  
+  .ButtonStyle {
+    height: 45px;
+    font-size: 15px;
+  }
+}
